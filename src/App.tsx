@@ -12,26 +12,28 @@ import JS from '../icons/JAVASCRIPT.svg'
 import PYTHON from '../icons/PYTHON.svg'
 import REACTNATIVE from '../icons/REACT NATIVE.svg'
 import JAVA from '../icons/JAVA.svg'
+import POSTGRES from '../icons/POSTGRESQL.svg'
 
 const habilidadesTech = [
-  { src: HTML, width: 95 },
-  { src: CSS, width: 85 },
-  { src: REACT, width: 100 },
-  { src: JS, width: 145 },
-  { src: REACTNATIVE, width: 160 },
+  { src: HTML, width: 116 },
+  { src: CSS, width: 100 },
+  { src: REACT, width: 110 },
+  { src: JS, width: 155 },
+  { src: REACTNATIVE, width: 180 },
+  { src: POSTGRES, width: 165 }
 ];
 
 const estudandoTech = [
-  { src: PYTHON, width: 120},
-    { src: JAVA, width: 85 }
+  { src: PYTHON, width: 130},
+    { src: JAVA, width: 95 }
 ]
 
 const projetosPessoais = [
-  {title: 'MineWrapped', link: 'www.minewrapped.com', href: 'https://www.minewrapped.com'},
-  {title: 'Receitalhada', link: 'github.com/Receitalhada', href: 'https://github.com/MuriloZague/receitalhada'},
-  { title: 'EldenQuiz', link: 'github.com/EldenQuizApp', href: 'https://github.com/MuriloZague/elden-quiz' },
-  { title: 'Dopaminer', link: 'github.com/Dopaminer', href: 'https://github.com/MuriloZague/dopaminer' },
-  { title: 'MHW-API', link: 'github.com/MHW-API', href: 'https://github.com/MuriloZague/MHW-API' },
+  { title: 'MineWrapped', link: 'www.minewrapped.com', href: 'https://www.minewrapped.com', description: 'Projeto pessoal voltado a criação de retrospectivas do jogo Minecraft' },
+  { title: 'Receitalhada', link: 'github.com/Receitalhada', href: 'https://github.com/MuriloZague/receitalhada', description: 'Aplicação para compartilhar e buscar receitas de forma simples.' },
+  { title: 'EldenQuiz', link: 'github.com/EldenQuizApp', href: 'https://github.com/MuriloZague/elden-quiz', description: 'Aplicativo de quiz temático com perguntas inspiradas em Elden Ring.' },
+  { title: 'Dopaminer', link: 'github.com/Dopaminer', href: 'https://github.com/MuriloZague/dopaminer', description: 'Projeto pessoal, feito por diversão, inspirado em jogos clickers' },
+  { title: 'MHW-API', link: 'github.com/MHW-API', href: 'https://github.com/MuriloZague/MHW-API', description: 'API para consulta de dados relacionados a Monster Hunter World.' },
 ]
 
 const contatosPessoais = [

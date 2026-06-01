@@ -3,8 +3,8 @@
 import InfoText from "../../utils/infoText";
 
 type InfoProps = {
-  name: String;
-  text: Array<{title: String; link: String; href: string}>
+  name: string;
+  text: Array<{ title: string; link: string; href: string; description?: string }>;
 };
 
 export default function Info({name, text}: InfoProps) {

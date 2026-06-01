@@ -9,7 +9,7 @@ export default function Tech({name, icons}: TechProps) {
 
     <div className="mt-2">
     <p className="mb-3">// {name}:</p>
-    <div className='flex gap-2 icons flex-wrap'>
+    <div className='flex gap-3 icons flex-wrap'>
         {icons.map((icon, index) => (
             <img
                 key={index}

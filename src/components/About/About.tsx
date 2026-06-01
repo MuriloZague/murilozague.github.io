@@ -5,7 +5,7 @@ export default function About() {
     <div className="mt-5">
       <p className="mb-2">// Sobre mim:</p>
       <p className="text-white text-[1.12rem] textoabout text-justify">Sou um entusiasta da área da tecnologia,
-atualmente cursando Sistemas para Internet
+atualmente cursando Sistemas para Internet na FATEC - Jales
 e imerso nos estudos em Desenvolvimento Web. Busco
 constantemente desafios que me permitam
 expandir minhas habilidades e estou pronto

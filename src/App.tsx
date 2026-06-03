@@ -12,7 +12,7 @@ import JS from '../icons/JAVASCRIPT.svg'
 import PYTHON from '../icons/PYTHON.svg'
 import REACTNATIVE from '../icons/REACT NATIVE.svg'
 import JAVA from '../icons/JAVA.svg'
-import POSTGRES from '../icons/POSTGRESQL.svg'
+import POSTGRES from '../icons/POSTGRESQL1.svg'
 
 const habilidadesTech = [
   { src: HTML, width: 116 },

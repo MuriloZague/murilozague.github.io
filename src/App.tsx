@@ -13,6 +13,7 @@ import PYTHON from '../icons/PYTHON.svg'
 import REACTNATIVE from '../icons/REACT NATIVE.svg'
 import JAVA from '../icons/JAVA.svg'
 import POSTGRES from '../icons/POSTGRESQL1.svg'
+import NODEJS from '../icons/NODE-JS.svg'
 
 const habilidadesTech = [
   { src: HTML, width: 116 },
@@ -24,8 +25,9 @@ const habilidadesTech = [
 ];
 
 const estudandoTech = [
-  { src: PYTHON, width: 130},
-    { src: JAVA, width: 95 }
+  { src: PYTHON, width: 125},
+    { src: JAVA, width: 95 },
+    { src: NODEJS, width: 120}
 ]
 
 const projetosPessoais = [

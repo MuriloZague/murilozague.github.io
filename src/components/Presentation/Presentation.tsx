@@ -48,9 +48,9 @@ export default function Presentation() {
           <p className="hero-hello text-white text-xl">
             Olá!<span className="animate-wave inline-block">👋</span> Eu sou{' '}
           </p>
-          <h1 className="text-7xl leading-tight" aria-label="Murilo Zague">
+          <h1 className="hero-h1 flex flex-wrap gap-x-5 text-7xl leading-tight" aria-label="Murilo Zague">
             {NAME_WORDS.map((word, w) => (
-              <span key={w} className="hero-word inline-block overflow-hidden align-bottom pb-1 mr-5 last:mr-0">
+              <span key={w} className="hero-word overflow-hidden pb-1">
                 {word.split('').map((char, c) => (
                   <span key={c} className="hero-char inline-block hero-gradient">
                     {char}

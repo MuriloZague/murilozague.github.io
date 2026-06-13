@@ -180,4 +180,17 @@ body {
     display: flex;
     justify-content: center;
   }
+  /* nome centralizado: gap do flex nao desloca a palavra como margin faria */
+  .hero-h1 {
+    justify-content: center;
+  }
+  /* projetos/contatos em uma linha so, com fonte fluida pro tamanho da tela */
+  .info-line {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  .info-line,
+  .info-line * {
+    font-size: clamp(8px, 3.4vw, 15px);
+  }
 }

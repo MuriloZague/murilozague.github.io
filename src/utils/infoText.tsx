@@ -13,13 +13,13 @@ export default function InfoText({ texts }: InfoProps) {
   return (
     <section>
       {texts.map((text, index) => (
-        <div className="mb-1 flex flex-wrap items-center gap-2" key={index}>
+        <div className="info-line mb-1 flex flex-wrap items-center gap-2" key={index}>
           <span className="text-indigo-600 const">const </span>
           <span className="text-emerald-300">{text.title}</span> =
           <span className="group relative inline-flex items-center gap-2">
             <a
               href={text.href}
-              className="text-violet-500 transition duration-300 hover:text-blue-400"
+              className="link-underline text-violet-500 transition duration-300 hover:text-blue-400"
               target="_blank"
               rel="noreferrer"
             >

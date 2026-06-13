@@ -1,6 +1,7 @@
 //Componente reutilizavel (projetos e contatos)
 
 import InfoText from "../../utils/infoText";
+import useReveal from "../../hooks/useReveal";
 
 type InfoProps = {
   name: string;
@@ -8,15 +9,16 @@ type InfoProps = {
 };
 
 export default function Info({name, text}: InfoProps) {
+  const ref = useReveal<HTMLElement>();
 
- return (
-   <section className="w-full max-w-fit flex flex-row justify-center mt-6 cursor-default info">
-    <div className="mt-3">
-    <p className="mb-2">// {name}:</p>
-      <InfoText
-        texts={text}
-      />
-    </div>
-   </section>
- );
+  return (
+    <section ref={ref} className="w-full max-w-fit flex flex-row justify-center mt-6 cursor-default info">
+      <div className="mt-3">
+        <p className="mb-2">// {name}:</p>
+        <InfoText
+          texts={text}
+        />
+      </div>
+    </section>
+  );
 }

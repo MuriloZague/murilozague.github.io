@@ -133,6 +133,14 @@ body {
   }
 }
 
+/* desktop: nome em uma linha so, fonte encolhe para caber na coluna */
+@media (min-width: 921px) {
+  .hero-h1 {
+    flex-wrap: nowrap;
+    font-size: clamp(2rem, 4.6vw, 4.5rem);
+  }
+}
+
 @media (max-width: 920px) {
   .developer {
     margin-top: 8px;

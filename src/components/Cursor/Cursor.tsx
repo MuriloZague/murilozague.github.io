@@ -61,12 +61,12 @@ export default function Cursor() {
     <>
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-emerald-300"
+        className="pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-emerald-300 opacity-0"
         aria-hidden="true"
       />
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[100] h-9 w-9 rounded-full border border-emerald-300/50"
+        className="pointer-events-none fixed left-0 top-0 z-[100] h-9 w-9 rounded-full border border-emerald-300/50 opacity-0"
         aria-hidden="true"
       />
     </>

@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   font-size: 1.1rem;
@@ -29,6 +33,79 @@ body {
   flex-direction: column;
   align-items: center;
   color: #607B96;
+  overflow-x: hidden;
+}
+
+/* cursor customizado substitui o nativo em ponteiros precisos */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background: rgba(67, 217, 173, 0.25);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #010C15;
+}
+::-webkit-scrollbar-thumb {
+  background: #1C2B3A;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #43D9AD;
+}
+
+/* spans do nome herdam o tamanho do h1 (o "*" do mobile os sobrescreveria) */
+.hero-word,
+.hero-char {
+  font-size: inherit;
+}
+
+/* nome com gradiente vertical branco -> esmeralda */
+.hero-gradient {
+  background: linear-gradient(180deg, #fff 55%, #43D9AD 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* caret piscando do typewriter */
+.caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* underline animado nos links */
+.link-underline {
+  position: relative;
+  background-image: linear-gradient(90deg, currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+/* textura de ruido por cima de tudo */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .me {
@@ -38,12 +115,22 @@ body {
   position: absolute;
   left: 10%;
   top: 10%;
-  transition: 300ms;
+  /* transform fica por conta do GSAP (entrada + parallax) */
+  transition: border-radius 300ms, box-shadow 300ms;
 }
 .me:hover {
-    transform: scale(105%);
     border: 2px solid #43D9AD;
     border-radius: 80px;
+    box-shadow: 0 0 40px rgba(67, 217, 173, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .caret {
+    animation: none;
+  }
 }
 
 @media (max-width: 920px) {

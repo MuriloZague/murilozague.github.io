@@ -19,7 +19,7 @@ export default function InfoText({ texts }: InfoProps) {
           <span className="group relative inline-flex items-center gap-2">
             <a
               href={text.href}
-              className="text-violet-500 transition duration-300 hover:text-blue-400"
+              className="link-underline text-violet-500 transition duration-300 hover:text-blue-400"
               target="_blank"
               rel="noreferrer"
             >

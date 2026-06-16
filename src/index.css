@@ -124,6 +124,78 @@ body {
     box-shadow: 0 0 40px rgba(67, 217, 173, 0.3);
 }
 
+/* ============================================================
+   View Transition: círculo que se expande na troca de tema
+   ============================================================ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  /* desliga o crossfade padrão; a revelação é feita via clip-path no JS */
+  animation: none;
+  mix-blend-mode: normal;
+}
+/* o novo tema fica por cima e é revelado pelo círculo expandindo */
+::view-transition-new(root) {
+  z-index: 1;
+}
+::view-transition-old(root) {
+  z-index: 0;
+}
+
+/* ============================================================
+   Tema claro
+   ============================================================ */
+html.light {
+  color-scheme: light;
+  background-color: #e9eef4;
+}
+html.light body {
+  color: #4a6079;
+}
+
+/* texto branco -> navy escuro */
+html.light .text-white {
+  color: #0b2239;
+}
+
+/* esmeralda -> tom mais escuro para contraste no claro */
+html.light .text-emerald-300 {
+  color: #0d9e74;
+}
+html.light .border-emerald-300 {
+  border-color: #15b585;
+}
+
+/* nome com gradiente: branco/esmeralda -> navy/esmeralda */
+html.light .hero-gradient {
+  background: linear-gradient(180deg, #0b2239 55%, #0d9e74 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* cartões de experiência e botão de tema */
+html.light [class~="bg-[#011221]/40"] {
+  background-color: rgba(255, 255, 255, 0.55);
+}
+html.light [class~="bg-[#011221]/50"] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* seleção e scrollbar no claro */
+html.light ::selection {
+  background: rgba(13, 158, 116, 0.22);
+  color: #0b2239;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #e9eef4;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #b9c6d4;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #0d9e74;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

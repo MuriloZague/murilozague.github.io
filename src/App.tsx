@@ -10,6 +10,7 @@ import Presentation from "./components/Presentation/Presentation";
 import Tech from "./components/Technologies/Tech";
 import ParticleField from "./components/Background/ParticleField";
 import Cursor from "./components/Cursor/Cursor";
+import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import me from "../icons/perfil.jpeg";
 
 import HTML from "../icons/HTML.svg";
@@ -147,6 +148,7 @@ function App() {
     <div ref={rootRef}>
       <ParticleField />
       <Cursor />
+      <ThemeToggle />
       <div className="scroll-progress fixed left-0 top-0 z-[90] h-[3px] w-full origin-left scale-x-0 bg-gradient-to-r from-emerald-300 to-violet-500" />
       <div className="grain" aria-hidden="true" />
 

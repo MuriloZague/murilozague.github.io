@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio | Murilo Zague</title>
     <!--<link href="/dist/output.css" rel="stylesheet">-->
+    <script>
+      // aplica o tema salvo antes da pintura para evitar flash
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

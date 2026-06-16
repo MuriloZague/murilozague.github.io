@@ -80,6 +80,36 @@ export default function ParticleField() {
     ico.position.set(isMobile ? 0 : 4.5, 1.5, -3)
     scene.add(ico)
 
+    // sincroniza cores/fog/blending com o tema (claro x escuro)
+    const emeraldMat = emerald.material as THREE.PointsMaterial
+    const violetMat = violet.material as THREE.PointsMaterial
+    const fog = scene.fog as THREE.FogExp2
+
+    const applyTheme = () => {
+      const light = document.documentElement.classList.contains('light')
+      // fog acompanha o fundo: no claro evita "névoa" escura sobre os pontos
+      fog.color.set(light ? 0xe9eef4 : 0x010c15)
+      // aditivo some em fundo claro -> usa blending normal e tons mais escuros
+      const blending = light ? THREE.NormalBlending : THREE.AdditiveBlending
+      emeraldMat.color.set(light ? 0x0d9e74 : 0x43d9ad)
+      violetMat.color.set(light ? 0x5b4bd6 : 0x6d5dfc)
+      emeraldMat.blending = blending
+      violetMat.blending = blending
+      emeraldMat.opacity = light ? 0.55 : 0.8
+      violetMat.opacity = light ? 0.55 : 0.8
+      emeraldMat.needsUpdate = true
+      violetMat.needsUpdate = true
+      icoMaterial.color.set(light ? 0x0d9e74 : 0x43d9ad)
+      icoMaterial.opacity = light ? 0.12 : 0.07
+    }
+    applyTheme()
+
+    const themeObserver = new MutationObserver(applyTheme)
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    })
+
     const mouse = { x: 0, y: 0 }
     const onMouseMove = (e: MouseEvent) => {
       mouse.x = (e.clientX / window.innerWidth - 0.5) * 2
@@ -121,6 +151,7 @@ export default function ParticleField() {
 
     return () => {
       cancelAnimationFrame(frameId)
+      themeObserver.disconnect()
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('resize', onResize)
       emerald.geometry.dispose()

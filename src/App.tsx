@@ -21,16 +21,18 @@ import REACTNATIVE from '../icons/REACT NATIVE.svg'
 import JAVA from '../icons/JAVA.svg'
 import POSTGRES from '../icons/POSTGRESQL1.svg'
 import NODEJS from '../icons/NODE-JS.svg'
+import NEXTJS from '../icons/NEXT-JS.svg'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const habilidadesTech = [
   { src: HTML, width: 116 },
   { src: CSS, width: 100 },
-  { src: REACT, width: 110 },
-  { src: JS, width: 155 },
-  { src: REACTNATIVE, width: 180 },
-  { src: POSTGRES, width: 165 }
+  { src: REACT, width: 105 },
+  { src: JS, width: 160 },
+  { src: REACTNATIVE, width: 183 },
+  { src: NEXTJS, width: 125 },
+  { src: POSTGRES, width: 163 }
 ];
 
 const estudandoTech = [
